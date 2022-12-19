@@ -107,7 +107,6 @@ footer {
 }
 
 .card-column {
-  /* border: 2px solid pink; */
 	/* flex basis, flex grow, flex shrink  */
 	flex: 1 0 100%;
 	padding: 1.5rem;
@@ -128,6 +127,7 @@ footer {
   outline-offset: -2px;
 
   /* TODO transition */
+  transition: all 0.5s ease-in-out;
 }
 
 .code-card .card-header {
@@ -138,12 +138,16 @@ footer {
   padding: 01.5rem 1rem;
   background-color: var(--dark-purple);
   color: var(--plum);
-
   /* TODO transition */
+  transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+  box-shadow: inset 0px 0px 8px var(--plum), 0 0 15px var(--plum);
 }
 
 .code-card .code-block {
-  border: 2px solid gold;
   flex-grow: 1;
 }
 
