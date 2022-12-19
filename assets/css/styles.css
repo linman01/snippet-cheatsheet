@@ -4,7 +4,7 @@
 			--black: #000;
 			--dark-purple: #231134;
 			--gainsboro: #dcdcdc;
-			--plum: #dda0dd;
+			--plum: rgb(222, 161, 222);
 			--highlight: #7e407e;
 			--sm-border-radius: 10px;
 			--card-padding: 2px;
@@ -85,4 +85,93 @@ main {
 footer {
 	margin: 1.5rem;
 	text-align: center;
+}
+
+/* Layout */
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.card-column {
+  /* border: 2px solid pink; */
+	/* flex basis, flex grow, flex shrink  */
+	flex: 1 0 100%;
+	padding: 1.5rem;
+  /* TODO transition */
+  margin-bottom: 1.5rem;
+}
+
+/* Card */
+.code-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 2rem;
+
+  outline: 2px dashed var(--gainsboro);
+  outline-offset: -2px;
+
+  /* TODO transition */
+}
+
+.code-card .card-header {
+  position: relative;
+  margin: -4rem 0 1.5rem 0;
+  border: 2px solid var(--gainsboro);
+  border-radius: 8px;
+  padding: 01.5rem 1rem;
+  background-color: var(--dark-purple);
+  color: var(--plum);
+
+  /* TODO transition */
+}
+
+.code-card .code-block {
+  border: 2px solid gold;
+  flex-grow: 1;
+}
+
+.code-card pre {
+  white-space: pre;
+  overflow: auto;
+  tab-size: 4;
+  padding: 1.2rem 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--gainsboro);
+  background-image: linear-gradient(
+    rgba(222, 161, 222, 0.5 )0%,
+    rgba(222, 161, 222, 0.2)100%
+  );
+}
+
+@media screen and (min-width: 768px) {
+  .card-column{
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .card-column:last-child {
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    width: 75%;
+  }
+
+  .card-column {
+    flex: 0 0 33.333%;
+    max-width: 33.3333%;
+  }
 }
