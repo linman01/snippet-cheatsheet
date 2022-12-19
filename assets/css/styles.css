@@ -5,9 +5,15 @@
 			--dark-purple: #231134;
 			--gainsboro: #dcdcdc;
 			--plum: rgb(222, 161, 222);
-			--highlight: #7e407e;
+			--highlight: #86d5ff;
+      
 			--sm-border-radius: 10px;
 			--card-padding: 2px;
+}
+
+::selection {
+  background: var(--highlight);
+  color: var(--dark-purple);
 }
 
 /* Default Styles */
@@ -106,6 +112,7 @@ footer {
 	flex: 1 0 100%;
 	padding: 1.5rem;
   /* TODO transition */
+  transition: flex-basis 500ms linear;
   margin-bottom: 1.5rem;
 }
 
@@ -152,6 +159,10 @@ footer {
     rgba(222, 161, 222, 0.5 )0%,
     rgba(222, 161, 222, 0.2)100%
   );
+}
+
+.code-card pre:active {
+  user-select: all;
 }
 
 @media screen and (min-width: 768px) {
